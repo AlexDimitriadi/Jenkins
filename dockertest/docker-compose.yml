@@ -11,7 +11,7 @@
       - ./archive/vilheor.hopto.org/:/etc/letsencrypt/live/vilheor.hopto.org
       - ./content1:/var/www/content1
       - ./content2:/var/www/content2
-      - ./download/:/var/www/download/
+      - ./download:/var/www/download
       - ./html:/var/www/html
       - ./data/certbot/www:/var/www/certbot
   certbot:
