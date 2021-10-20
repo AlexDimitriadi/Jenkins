@@ -12,7 +12,7 @@
       - ./content1:/var/www/content1
       - ./content2:/var/www/content2
       - ./download:/var/www/download
-      - ./phpinfo.php:/var/www/html
+      - ./phpinfo.php:/var/www/html/
       - ./data/certbot/www:/var/www/certbot
   certbot:
     image: certbot/certbot
@@ -25,8 +25,8 @@
     ports:
       - "9000:80"
     volumes:
-      - ./phpinfo.php:/var/www/html
+      - ./phpinfo.php:/var/www/html/
   php:
     image: php:7.2-fpm
     volumes:
-      - ./phpinfo.php:/var/www/html
+      - ./phpinfo.php:/var/www/html/
