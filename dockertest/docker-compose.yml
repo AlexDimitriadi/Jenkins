@@ -12,7 +12,6 @@
       - ./content1:/var/www/content1
       - ./content2:/var/www/content2
       - ./download:/var/www/download
-      - ./html/phpinfo.php:/var/www/html/phpinfo.php
       - ./data/certbot/www:/var/www/certbot
   certbot:
     image: certbot/certbot
