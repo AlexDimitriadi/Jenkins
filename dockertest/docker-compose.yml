@@ -24,8 +24,8 @@
     ports:
       - "9000:80"
     volumes:
-      - ./html/phpinfo.php:/var/www/html/phpinfo.php
+      - ./html:/var/www/html
   php:
     image: php:7.2-fpm
     volumes:
-      - ./html/phpinfo.php:/var/www/html/phpinfo.php
+      - ./html:/var/www/html

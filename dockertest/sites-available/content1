@@ -8,10 +8,10 @@ location / {
         return 301 https://vilheor.hopto.org$request_uri;
 }
 
-location ^~ /.well-known/acme-challenge/ {
-    default_type "text/plain";
-    root /var/www/certbot;
-}
+#location ^~ /.well-known/acme-challenge/ {
+#    default_type "text/plain";
+#    root /var/www/certbot;
+#}
 
 }
 
