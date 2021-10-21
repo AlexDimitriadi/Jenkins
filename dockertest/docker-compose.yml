@@ -1,3 +1,5 @@
+version: '3'
+services:
   nginx:
     image: nginx:1.15-alpine
     command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
@@ -12,7 +14,6 @@
       - ./content1:/var/www/content1
       - ./content2:/var/www/content2
       - ./download:/var/www/download
-      - ./phpinfo.php:/var/www/html/
       - ./data/certbot/www:/var/www/certbot
   certbot:
     image: certbot/certbot
@@ -21,12 +22,9 @@
       - ./archive/vilheor.hopto.org/:/etc/letsencrypt/live/vilheor.hopto.org
       - ./data/certbot/www:/var/www/certbot
   apache:
-    image: httpd:latest
+    image: php:apache
     ports:
       - "9000:80"
     volumes:
-      - ./phpinfo.php:/var/www/html/
-  php:
-    image: php:7.2-fpm
-    volumes:
-      - ./phpinfo.php:/var/www/html/
+      - ./html:/var/www/html/
+
